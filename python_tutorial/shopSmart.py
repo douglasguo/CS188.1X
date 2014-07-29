@@ -37,7 +37,8 @@ if __name__ == '__main__':
   shop1 =  shop.FruitShop('shop1',dir1)
   dir2 = {'apples': 1.0, 'oranges': 5.0}
   shop2 = shop.FruitShop('shop2',dir2)
-  shops = [shop1, shop2]
-  print "For orders ", orders, ", the best shop is", shopSmart(orders, shops).getName()
+  shops = [shop1, shop2] # shops is a list!!!
+  print "For orders ", orders, ", the best shop is", shopSmart(orders, shops).getName() #
+  # shoSmart is a object, which means that the return type of shopSmart  belong to shop class.
   orders = [('apples',3.0)]
   print "For orders: ", orders, ", the best shop is", shopSmart(orders, shops).getName()
