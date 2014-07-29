@@ -1,3 +1,11 @@
+# shopSmart.py
+# ------------
+# Licensing Information: Please do not distribute or publish solutions to this
+# project. You are free to use and extend these projects for educational
+# purposes. The Pacman AI projects were developed at UC Berkeley, primarily by
+# John DeNero (denero@cs.berkeley.edu) and Dan Klein (klein@cs.berkeley.edu).
+# For more info, see http://inst.eecs.berkeley.edu/~cs188/sp09/pacman.html
+
 """
 Here's the intended output of this script, once you fill it in:
 
@@ -6,24 +14,21 @@ Welcome to shop2 fruit shop
 For orders:  [('apples', 1.0), ('oranges', 3.0)] best shop is shop1
 For orders:  [('apples', 3.0)] best shop is shop2
 """
+
 import shop
 
 def shopSmart(orderList, fruitShops):
     """
         orderList: List of (fruit, numPound) tuples
         fruitShops: List of FruitShops
-    """
-    costTotal1=0.0
-    costTotal2=0.0
-    for fruit, quant in orders:
-      costTotal1+=shop1.getCostPerPound(fruit)* quant
-    for fruit , quant in orders:
-      costTotal2+=shop2.getCostPerPound(fruit)* quant
-    if costTotal1>costTotal2:
-      print "For orders:  %s best shop is shop1" %  (orders)
-    else:
-      print  "For orders:  %s best shop is shop2" % (orders)
-    return None
+    """    
+    min = float('inf')
+    for shop in fruitShops:
+        price = shop.getPriceOfOrder(orderList)
+        if price < min:
+            min = price
+            cheapest = shop
+    return cheapest
 
 if __name__ == '__main__':
   "This code runs when you invoke the script from the command line"

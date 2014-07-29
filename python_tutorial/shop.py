@@ -4,7 +4,7 @@
 # @Author: guoyinghao
 # @Date:   2014-07-28 21:09:34
 # @Last Modified by:   guoyinghao
-# @Last Modified time: 2014-07-28 23:39:19
+# @Last Modified time: 2014-07-29 23:38:06
 
 class FruitShop:
 	"""name: Name for the fruit shop
@@ -23,7 +23,7 @@ class FruitShop:
 			return None
 		return self.fruitPrices[fruit]
 
-	def getPriceOfOrder(self, orist):
+	def getPriceOfOrder(self, orderList):
 		totalCost=0.0
 		for fruit, numPounds in orderList:
 			costPerPound = self.getCostPerPound(fruit)
